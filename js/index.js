@@ -29,6 +29,11 @@ document.getElementById("codigo").addEventListener("keydown", function (e)
         e.preventDefault();
     }
 
+    if (e.keyCode === 73 && (e.ctrlKey || e.metaKey) && document.activeElement.id === "codigo")
+    {
+
+    }
+
 
 }, false);
 
@@ -105,7 +110,40 @@ async function enviarNotion()
 
     console.log("enviando al server");
     
+    const response = await fetch("https://www.notion.so",
+    {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'no-cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers:
+        {
+            // Accept: "application/json",
+            // "Content-Type": "multipart/form-data",
+            Accept: "*/*",
+            "Content-Type": "text/plain",
+            "Accept-Language": "en-US,en;q=0.9",
+            // "cookie": `token_v2=${tokenNotion};`
 
+        },
+        // body: formData
+    });
+
+    // fetch("https://www.notion.so").then(res => res.json())
+    //     .then(data => {
+
+    //     })
+    //     .catch(err => {
+    //         console.error('Error: ', err);
+    //     });
+
+
+
+
+    if (response.ok === true) {
+
+        const data = response.json();
+    }
 
 
 }
