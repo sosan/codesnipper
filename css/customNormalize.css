@@ -1,0 +1,116 @@
+
+/* reset general de los margin y paddins */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+
+figure, h1, h2, h3, h4, h5, h6
+{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    scroll-behavior: auto;
+}
+
+
+body 
+{
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5
+{
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+
+a 
+{
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    background-color: transparent;
+}
+
+/* dejado como lista autentica */
+ol
+{
+
+}
+
+/* utlizar para repartir estructura */
+ul 
+{
+    list-style: none;
+}
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: visible;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    -webkit-font-smoothing: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    background: none;
+    vertical-align: top;
+}
+
+
+option
+{
+    background-color: inherit;
+}
+
+
+a:active,
+button:active 
+{
+    color: inherit;
+}
+
+
+
+
+textarea 
+{
+    resize: none;
+}
+
+
+input[type="button"],
+button 
+{
+    cursor: pointer;
+}
+
+
+button[disabled],
+html input[disabled] 
+{
+    cursor: default;
+}

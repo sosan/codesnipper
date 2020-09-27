@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/customNormalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+
+        <section class="app">
+
+            <!-- header -->
+            <header class="appHeader">
+                
+                <ul class="appHeader">
+                    <li><h1 class="titulo">Generador</h1></li>
+                    <li>
+                        <input type="text" class=" input appInputTokenNotion" name="tokenNotion" value="" placeholder="Token Notion" id="tokenNotion" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false">
+                    </li>
+                    <li>
+                        <input type="text" class=" input appInputUrlNotion" name="urlNotion" value="" placeholder="Pagina Id" id="urlNotion" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false">
+                    </li>
+                </ul>
+                
+            </header>
+            <!-- fin header-->
+
+            <main class="appMain">
+                <!-- INPUT -->
+
+                <ul class="appMain_mitad">
+                    <li class="appMain_mitadTop">
+                        <input type="text" class="input" name="description" placeholder="Descripcion" id="descripcion" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" >
+                        <input type="text" class="input" name="tabTrigger" placeholder="Sucesion teclas para lanzar Snipplet" autoComplete="off" autoCorrect="off" id="prefijo" autoCapitalize="off" spellCheck="false" >
+                    </li>
+                    <li class="appMain_mitadBottom">
+                        <textarea  class="textarea" name="snippet" placeholder="Codigo..." id="codigo" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" wrap="off"></textarea>
+                    </li>
+                </ul>
+                <!-- FIN INPUT-->
+
+                <!-- OUTPUT -->
+                <ul class="appMain_mitad">
+                    <li class="appMain_mitadTop">
+                        <h1 class="boton botonAzul">VSCode Snippet</h1>
+                    </li>
+                    <li class="botones">
+                        <button class="boton botonAzul" id="tooltip">
+                            Copiar
+                        </button>
+                    
+                        <button class="boton botonAzul" id="btnEnviarNotion">
+                            Enviar Notion
+                        </button>
+                    </li>
+
+                    <li class="appMain_mitadBottom">
+                        <pre class="pre" id="resultado">
+    "": {
+        "prefix": "",
+        "body": [
+            ""
+        ],
+        "description": ""
+    }
+                        </pre>
+
+                        
+                    </li>
+                    
+                </ul>
+                <!-- FIN OUTPUT -->
+            </main>
+        </section>
+
+
+<script type="text/javascript" src="./js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+:root
+{
+    --background-color-vscode: #006eb4;
+    --color-titulo: white;
+    --color-placeholder: black;
+    --background-color-botonAzul: #006eb4;
+    --background-color-textarea: whitesmoke;    
+    --background-color-mitad: rgba(255, 255, 255, 0.864);
+    
+    /* PADDINGS  */
+    --reset-valor: 0;
+
+    --padding-header: 0.6%;
+    
+    /* FUENTE */
+
+    --font-size-default: 16px;
+    --font-size-titulo: 18px;
+    --line-height: 32px;
+    --font-family-default: "Consolas", Courier, sans-serif;
+
+    /* BORDER-RADIUS */
+    --border-radius-grande: 10px;
+    --border-radius-mediano: 5px;
+    --border-radius-pequeno: 2px;
+
+}
+
+*
+{
+    margin: var(--reset-valor);
+    padding: var(--reset-valor);
+    box-sizing: border-box;
+}
+
+html 
+{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-family-default);
+    font-size: var(--font-size-default);
+    line-height: var(--line-height);
+
+    background-color: var(--background-color-vscode);
+
+}
+
+.app
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+    
+    transition: background-color 140ms;
+}
+
+
+.appHeader 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: var(--padding-header);
+    text-align: center;
+
+}
+
+
+::placeholder 
+{ 
+    color: var(--color-placeholder);
+    opacity: 1;
+}
+
+
+
+
+
+.titulo
+{
+    font-size: var(--font-size-titulo);
+    color: var(--color-titulo);
+
+}
+
+
+
+.appMain 
+{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    width: 100%;
+}
+
+
+.appMain_mitad 
+{
+    display: flex;
+    flex-direction: column;
+
+    margin: 2px;
+    border-radius: var(--border-radius-pequeno);
+    background-color: var(--background-color-mitad);
+    width: 50%;
+
+
+}
+
+
+
+.appMain_mitadTop 
+{
+    display: flex;
+    align-items: center;
+    flex-basis: 64px;
+    flex-shrink: 0;
+    
+    padding: 5px;
+}
+
+
+.appMain_mitadBottom 
+{
+    position: relative;
+    
+    display: flex;
+    flex: 1;
+    min-height: 160px;
+    padding: 0 4px 4px;
+}
+
+.input
+{
+    flex: 1;
+    width: 100%;
+
+    margin: 2px;
+    padding: 10px 16px;
+    border: 1px solid lightblue;
+    border-radius: var(--border-radius-grande);
+    background-color: white;
+
+}
+
+
+.textarea
+{
+    display: flex;
+    flex: 1;
+    border: 1px solid lightblue;
+    border-radius: var(--border-radius-mediano);
+    background-color: var(--background-color-textarea);
+    padding: 17px;
+    width: 100px;
+    resize: none;
+
+    
+}
+
+.pre 
+{
+    flex: 1;
+    padding: 16px;
+    border: none;
+    border-radius: var(--border-radius-mediano);
+    background-color: var(--background-color-textarea);
+    resize: none;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    -webkit-user-select: all;
+    user-select: all;
+}
+
+
+.botones 
+{
+
+    /* position: absolute; */
+    /* right: 8px; */
+    /* bottom: 8px; */
+}
+
+.boton
+{
+    flex: 1;
+    margin: 2px;
+    padding: 10px 16px;
+    border: 0px;
+    border-radius: var(--border-radius-mediano);
+    color: var(--color-titulo);
+    white-space: nowrap;
+}
+
+.botonAzul 
+{
+    background-color: var(--background-color-botonAzul);
+    text-align: center;
+}
