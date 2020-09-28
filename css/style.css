@@ -137,8 +137,21 @@ body {
     display: flex;
     flex: 1;
     min-height: 160px;
+    
     padding: 0 4px 4px;
 }
+
+.in
+{
+    max-height: 75vh;
+}
+
+.out
+{
+    max-height: 65vh;
+}
+
+
 
 .input
 {
@@ -162,9 +175,7 @@ body {
     border-radius: var(--border-radius-mediano);
     background-color: var(--background-color-textarea);
     padding: 17px;
-    width: 100px;
     resize: none;
-
     
 }
 
@@ -175,11 +186,13 @@ body {
     border: none;
     border-radius: var(--border-radius-mediano);
     background-color: var(--background-color-textarea);
+    
     resize: none;
     -moz-user-select: all;
     -ms-user-select: all;
     -webkit-user-select: all;
     user-select: all;
+    overflow: hidden;
 }
 
 
