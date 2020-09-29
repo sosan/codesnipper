@@ -107,7 +107,26 @@ async function enviarNotion()
     
     const codigo = document.getElementById("resultado").value;
 
-    
+    const data = { 
+        "codigo": codigo,
+        "apiToken": tokenNotion,
+        "idPage": urlNotion 
+    };
+
+    fetch("https://codesnipper.vercel.app/api", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Success:", data);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 
 }
 
@@ -128,7 +147,7 @@ function getCookie(name)
     var ca = document.cookie.split(";");
     for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        while (c.charAt(0) == " ") c = c.substring(1, c.length);
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
