@@ -2,7 +2,8 @@
 from flask import Flask, Response
 import os
 # configuracion de puertos, path, etc...
-# import settings
+import settings
+settings.readconfig()
 
 # from datetime import datetime, timedelta
 # import calendar
@@ -19,6 +20,9 @@ from flask.json import jsonify
 
 
 app = Flask(__name__)
+env_produccion = os.getenv("FLASK_ENV", "production")
+app.config("ENV", env_produccion)
+app.config("FLASK_APP", "index.py")
 
 @app.route("/", methods=["get"])
 def home():
