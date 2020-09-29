@@ -105,8 +105,9 @@ async function enviarNotion()
 
     console.log("enviando al server");
     
+    const codigo = document.getElementById("resultado").value;
 
-
+    
 
 }
 
