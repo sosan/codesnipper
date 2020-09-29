@@ -20,13 +20,13 @@ from flask import session
 from flask.json import jsonify
 
 # logica app
-from ModuloLogica.Logica import ManagerLogica
+# from ModuloLogica.Logica import ManagerLogica
 
 # instanciaciones e inicializciones web
 app = Flask(__name__)
 app.secret_key = os.urandom(42)
 CORS(app)
-managerlogica = ManagerLogica()
+# managerlogica = ManagerLogica()
 
 
 
@@ -43,4 +43,5 @@ if __name__ == "__main__":
     env_debug = os.environ.get("FLASK_DEBUG", False)
     env_produccion = os.getenv("FLASK_ENV", "production")
     app.config("ENV", env_produccion)
+    
     app.run(host=env_host, port=env_port, debug=env_debug)
