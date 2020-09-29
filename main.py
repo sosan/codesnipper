@@ -41,7 +41,7 @@ def api_get():
 
 
 @app.route("/api", methods=["post"])
-@cross_origin(origin="localhost", headers=["Content- Type","Authorization"])
+# @cross_origin(origin="localhost", headers=["Content- Type","Authorization"])
 def api_post():
 
     if ("apiToken" in request.form and "idPage" in request.form):
