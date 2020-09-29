@@ -20,13 +20,14 @@ from flask.json import jsonify
 
 
 app = Flask(__name__)
-# env_produccion = os.getenv("FLASK_ENV", "production")
+env_produccion = os.getenv("FLASK_ENV", "production")
+
 # app.config("ENV", env_produccion)
 # app.config("FLASK_APP", "index.py")
 
 @app.route("/", methods=["get"])
 def home():
-    return Response("Perct")
+    return Response("Perct {}" .format(env_produccion))
 
 @app.route("/api", methods=["get"])
 def api():
