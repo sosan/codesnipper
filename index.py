@@ -20,15 +20,18 @@ from flask.json import jsonify
 
 
 app = Flask(__name__)
-env_produccion = os.getenv("FLASK_ENV", "production")
-
-app.config("ENV", env_produccion)
-# app.config("FLASK_APP", "index.py")
 
 @app.route("/", methods=["get"])
 def home():
-    return Response("Perct {}" .format(env_produccion))
+    return Response("Perct")
 
-@app.route("/api", methods=["get"])
+
+
+@app.route("/api", methods=["post"])
 def api():
-    return jsonify({"resultado": "ok"})
+
+    if ("apiToken" in request.form):
+        pass
+        # return jsonify({"resultado": "ok"})
+
+    return redirect(url_for("home"))
