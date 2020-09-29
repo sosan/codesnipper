@@ -17,6 +17,7 @@ from flask import request
 from flask import redirect
 from flask import url_for
 from flask import session
+from flask.json import jsonify
 
 # logica app
 from ModuloLogica.Logica import ManagerLogica
@@ -28,17 +29,18 @@ CORS(app)
 managerlogica = ManagerLogica()
 
 
+
 # ruta home
 @app.route("/", methods=["get"])
 def home():
-    return render_template("index.html")
+    return jsonify({"resultado": "ok" })
 
 
 if __name__ == "__main__":
     settings.readconfig()
-    env_port = int(os.getenv("PORT", 5000))
-    env_debug = os.getenv("FLASK_DEBUG", True)
-    produccion = os.getenv("FLASK_ENV", "production")
-    app.config("ENV", produccion)
-    
-    app.run(host="0.0.0.0", port=env_port, debug=env_debug)
+    env_host = os.environ.get("HOST", "0.0.0.0")
+    env_port = int(os.environ.get("PORT", 5000))
+    env_debug = os.environ.get("FLASK_DEBUG", False)
+    env_produccion = os.getenv("FLASK_ENV", "production")
+    app.config("ENV", env_produccion)
+    app.run(host=env_host, port=env_port, debug=env_debug)
