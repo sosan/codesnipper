@@ -25,6 +25,7 @@ from ModuloLogica.Logica import ManagerLogica
 managerlogica = ManagerLogica()
 
 app = Flask(__name__)
+CORS(app,  supports_credentials=True, resources={r"/api/*": {"origins": "*"}}, methods=["GET", "HEAD", "POST"])
 
 @app.route("/", methods=["get"])
 def home():
@@ -59,7 +60,7 @@ def api_post():
 
         page.title += " (Cambiado)"
         bloquecodigo = page.children.add_new(CodeBlock, title="hooollaaa")
-        if bloquecodigo != None:
+        if bloquecodigo.id != None:
             return jsonify({"resultado": "ok"})
         else:
             return jsonify({"resultado": "error"})
