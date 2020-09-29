@@ -25,7 +25,7 @@ def home():
     return Response("Perct")
 
 @app.route("/api", methods=["get"])
-def home():
+def api():
     return jsonify({"resultado": "ok"})
 
 
