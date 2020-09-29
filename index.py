@@ -22,7 +22,7 @@ from flask.json import jsonify
 app = Flask(__name__)
 env_produccion = os.getenv("FLASK_ENV", "production")
 
-# app.config("ENV", env_produccion)
+app.config("ENV", env_produccion)
 # app.config("FLASK_APP", "index.py")
 
 @app.route("/", methods=["get"])
