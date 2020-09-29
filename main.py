@@ -43,5 +43,6 @@ if __name__ == "__main__":
     env_debug = os.environ.get("FLASK_DEBUG", False)
     env_produccion = os.getenv("FLASK_ENV", "production")
     app.config("ENV", env_produccion)
-    
+    app.config("FLASK_APP", "index.py")
+
     app.run(host=env_host, port=env_port, debug=env_debug)
