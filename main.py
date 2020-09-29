@@ -27,8 +27,8 @@ managerlogica = ManagerLogica()
 
 app = Flask(__name__)
 # CORS(app,  supports_credentials=True, resources={r"/api/*": {"origins": "*"}})
-
-cors = CORS(app, resources={r"/api": {"origins": "*"}})
+#  resources={r"/api": {"origins": "*"}}
+CORS(app)
 
 @app.route("/", methods=["get"])
 def home():
