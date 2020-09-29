@@ -25,7 +25,9 @@ from ModuloLogica.Logica import ManagerLogica
 managerlogica = ManagerLogica()
 
 app = Flask(__name__)
-CORS(app,  supports_credentials=True, resources={r"/api/*": {"origins": "*"}}, methods=["GET", "HEAD", "POST"])
+# CORS(app,  supports_credentials=True, resources={r"/api/*": {"origins": "*"}})
+
+cors = CORS(app, resources={r"/api": {"origins": "*"}})
 
 @app.route("/", methods=["get"])
 def home():
@@ -36,7 +38,9 @@ def home():
 def api_get():
     return redirect(url_for("home"))
 
+
 @app.route("/api", methods=["post"])
+@cross_origin(origin="localhost", headers=["Content- Type","Authorization"])
 def api_post():
 
     if ("apiToken" in request.form and "idPage" in request.form):
