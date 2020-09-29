@@ -16,6 +16,7 @@ from flask import redirect
 from flask import url_for
 from flask import session
 from flask.json import jsonify
+from flask.helpers import make_response
 
 from notion.client import NotionClient
 from notion.block import CodeBlock
@@ -64,10 +65,14 @@ def api_post():
 
         page.title += " (Cambiado)"
         bloquecodigo = page.children.add_new(CodeBlock, title="hooollaaa")
-        if bloquecodigo.id != None:
-            return jsonify({"resultado": "ok"})
-        else:
-            return jsonify({"resultado": "error"})
+        response = make_response()
 
+        if bloquecodigo.id != None:
+            response = jsonify({"resultado": "ok"})
+        else:
+            response = jsonify({"resultado": "error"})
+
+        response.headers.add("Access-Control-Allow-Origin", "*")
+        return response
 
     return redirect(url_for("home"))
