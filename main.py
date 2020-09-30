@@ -28,7 +28,7 @@ managerlogica = ManagerLogica()
 app = Flask(__name__)
 # CORS(app,  supports_credentials=True, resources={r"/api/*": {"origins": "*"}})
 #  resources={r"/api": {"origins": "*"}}
-CORS(app)
+# CORS(app)
 
 @app.route("/", methods=["get"])
 def home():
@@ -40,8 +40,8 @@ def api_get():
     return redirect(url_for("home"))
 
 
-@app.route("/api", methods=["post"])
 # @cross_origin(origin="localhost", headers=["Content- Type","Authorization"])
+@app.route("/api", methods=["post"])
 def api_post():
 
     if ("apiToken" in request.form and "idPage" in request.form):
