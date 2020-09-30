@@ -1,4 +1,4 @@
 flask
-notion
+# notion
 gunicorn
 python-dotenv
