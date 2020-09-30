@@ -68,3 +68,14 @@ def api_post():
         response.headers.add("Access-Control-Allow-Origin", "*")
         return response
     return redirect(url_for("home"))
+
+if __name__ == "__main__":
+    settings.readconfig()
+    env_host = os.environ.get("HOST", "0.0.0.0")
+    env_port = int(os.environ.get("PORT", 5000))
+    env_debug = os.environ.get("FLASK_DEBUG", False)
+    env_produccion = os.getenv("FLASK_ENV", "production")
+    app.config("ENV", env_produccion)
+    app.config("FLASK_APP", "main.py")
+
+    app.run(host=env_host, port=env_port, debug=env_debug)
