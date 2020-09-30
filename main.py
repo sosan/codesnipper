@@ -58,6 +58,7 @@ def api_post():
         page.title += " (Cambiado)"
         bloquecodigo = page.children.add_new(CodeBlock, title="hooollaaa")
         response = make_response()
+        print(bloquecodigo)
 
         if bloquecodigo.id != None:
             response = jsonify({"resultado": "ok"})
