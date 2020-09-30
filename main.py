@@ -1,7 +1,7 @@
 from flask import Flask, Response
 import os
-import settings
-settings.readconfig()
+# import settings
+# settings.readconfig()
 
 from flask import Flask
 from flask_cors import CORS
@@ -17,8 +17,8 @@ from notion.client import NotionClient
 from notion.block import CodeBlock
 from notion.block import PageBlock
 
-from ModuloLogica.Logica import ManagerLogica
-managerlogica = ManagerLogica()
+# from ModuloLogica.Logica import ManagerLogica
+# managerlogica = ManagerLogica()
 
 app = Flask(__name__)
 
