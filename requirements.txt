@@ -3,10 +3,10 @@ notion
 gunicorn
 python-dotenv
 # -----
-requests
-cached_property
-commonmark
-bs4
-slugify
-tzlocal
-dictdiffer
+# requests
+# cached_property
+# commonmark
+# bs4
+# slugify
+# tzlocal
+# dictdiffer
