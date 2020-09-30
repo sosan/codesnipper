@@ -4,7 +4,7 @@ import os
 # settings.readconfig()
 
 from flask import Flask
-from flask_cors import CORS
+# from flask_cors import CORS
 from flask import render_template
 from flask import request
 from flask import redirect
