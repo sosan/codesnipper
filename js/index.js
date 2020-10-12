@@ -4,6 +4,7 @@ document.getElementById("prefijo").addEventListener("input", rellenarDescripcion
 document.getElementById("codigo").addEventListener("input", rellenarDescripcion);
 
 document.getElementById("btnEnviarNotion").addEventListener("click", enviarNotion);
+document.getElementById("btnEnviarGist").addEventListener("click", enviarGist);
 document.getElementById("tooltip").addEventListener("click", copyText);
 document.getElementById("tooltip").addEventListener("mouseout", outCopy);
 
@@ -90,6 +91,61 @@ function outCopy()
     tooltip.innerHTML = "Copiar";
 }
 
+async function enviarGist()
+{
+
+    const token = document.getElementById("tokenGist").value;
+    
+    if( token === "")
+    {
+        return;
+    }
+    setCookie(null, null, token);
+
+    console.log("enviando al server");
+
+    const codigo = document.getElementById("resultado").innerText;
+    const lenguaje = document.getElementById("lenguaje_codigo").value;
+
+    const data = { 
+
+        "description": "Snipplet " + lenguaje,
+        "public": false,
+        "files": {
+            "": {
+                "content": codigo
+            },
+        }
+
+    };
+
+
+    fetch("https://api.github.com/gists", {
+        method: "POST",
+        headers: {
+            'Authorization':'token ' + token,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        console.log("resuestas=", response.body);
+        console.log("resuestas=", response.body);
+    })
+    .then(respuesta => {
+        if (typeof respuesta !== 'undefined') {
+            console.log("Success:", JSON.parse(respuesta));
+        }
+        console.log("Success:", respuesta);
+
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    });
+
+
+}
+
 
 async function enviarNotion()
 {
@@ -100,7 +156,7 @@ async function enviarNotion()
     {
         return;
     }
-    setCookie(tokenNotion, urlNotion);
+    setCookie(tokenNotion, urlNotion, null);
 
 
     console.log("enviando al server");
@@ -143,13 +199,24 @@ async function enviarNotion()
 
 }
 
-function setCookie(tokenNotion, urlNotion)
+function setCookie(tokenNotion, urlNotion, tokenGist)
 {
 
-    var exp = new Date();
-    exp.setTime(exp.getTime() + (30 * 24 * 60 * 60 * 1000 * 1000));
-    document.cookie = "token_v2=" + tokenNotion + ";path=/; expires=" + exp.toGMTString();
-    document.cookie = "nombreUrl=" + urlNotion + ";path=/; expires=" + exp.toGMTString();
+    if (tokenGist)
+    {
+        var exp = new Date();
+        exp.setTime(exp.getTime() + (30 * 24 * 60 * 60 * 1000 * 1000));
+        document.cookie = "tokenGist=" + tokenGist + ";path=/; expires=" + exp.toGMTString();
+    }
+
+    if (tokenNotion || urlNotion)
+    {
+        var exp = new Date();
+        exp.setTime(exp.getTime() + (30 * 24 * 60 * 60 * 1000 * 1000));
+        document.cookie = "token_v2=" + tokenNotion + ";path=/; expires=" + exp.toGMTString();
+        document.cookie = "nombreUrl=" + urlNotion + ";path=/; expires=" + exp.toGMTString();
+    }
+    
 }
 
 
@@ -174,15 +241,24 @@ function onLoadPage()
     console.log("cargamos pagina")
     const cookieNotion = getCookie("token_v2");
     const cookieUrl = getCookie("nombreUrl");
+    const cookieGist = getCookie("tokenGist");
     
-    if (cookieNotion || cookieUrl) 
+    
+    if (cookieNotion || cookieUrl)
     {
         //rellenar url y token
         console.log("rellenar inputs con datos cookie");
         document.getElementById("tokenNotion").value = cookieNotion;
         document.getElementById("urlNotion").value = cookieUrl;
-    
     }
+    
+    if (cookieGist)
+    {
+        document.getElementById("tokenGist").value = cookieGist;
+    }
+
+
+
 
 }
 
