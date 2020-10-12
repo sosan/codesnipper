@@ -1,9 +1,10 @@
 :root
 {
-    --background-color-vscode: #006eb4;
+    /* #006eb4 */
+    --background-color-vscode: #40366b; 
     --color-titulo: white;
     --color-placeholder: black;
-    --background-color-botonAzul: #006eb4;
+    --background-color-botonAzul: #40366b;
     --background-color-textarea: whitesmoke;    
     --background-color-mitad: rgba(255, 255, 255, 0.864);
     
@@ -14,7 +15,7 @@
     
     /* FUENTE */
 
-    --font-size-default: 16px;
+    --font-size-default: 12px;
     --font-size-titulo: 18px;
     --line-height: 32px;
     --font-family-default: "Consolas", Courier, sans-serif;
@@ -71,6 +72,7 @@ body {
     width: 100%;
 
     padding: var(--padding-header);
+    align-items: center;
     text-align: center;
 
 }
@@ -132,11 +134,12 @@ body {
 
 .appMain_mitadBottom 
 {
-    position: relative;
+    /* position: relative; */
     
     display: flex;
     flex: 1;
     min-height: 160px;
+     
     
     padding: 0 4px 4px;
 }
@@ -195,13 +198,18 @@ body {
     overflow: hidden;
 }
 
+.select-lenguaje
+{
+    border: 1px solid black;
+    background-color: var(--background-color-textarea);
+}
+
 
 .botones 
 {
-
-    /* position: absolute; */
-    /* right: 8px; */
-    /* bottom: 8px; */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .boton

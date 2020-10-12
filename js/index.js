@@ -106,15 +106,18 @@ async function enviarNotion()
     console.log("enviando al server");
     
     const codigo = document.getElementById("resultado").innerText;
+    const lenguaje = document.getElementById("lenguaje_codigo").value;
 
     const data = { 
         "codigo": codigo,
         "apiToken": tokenNotion,
-        "idPage": urlNotion 
+        "idPage": urlNotion,
+        "lenguaje": lenguaje,
     };
 
     console.log(JSON.stringify(data));
 
+    // fetch("http://localhost:5000/api", {
     fetch("https://codesnippletback.herokuapp.com/api", {
         mode: "no-cors",
         method: "POST",

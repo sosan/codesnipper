@@ -19,6 +19,9 @@
                 <ul class="appHeader">
                     <li><h1 class="titulo">Generador</h1></li>
                     <li>
+                        <input type="text" class=" input appInputTokenNotion" name="tokenGist" value="" placeholder="Token API Gist" id="tokenGist" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false">
+                    </li>
+                    <li>
                         <input type="text" class=" input appInputTokenNotion" name="tokenNotion" value="" placeholder="Token Notion" id="tokenNotion" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false">
                     </li>
                     <li>
@@ -49,7 +52,11 @@
                         <h1 class="boton botonAzul">VSCode Snippet</h1>
                     </li> -->
                     <li class="botones">
-                        <h1 class="boton botonAzul">VSCode Snippet</h1>
+                        <!-- <span class="boton botonAzul">VSCode Snippet</span> -->
+                        <button class="boton botonAzul" id="btnEnviarGist">
+                            Enviar Gist
+                        </button>
+
                         <button class="boton botonAzul" id="tooltip">
                             Copiar
                         </button>
@@ -57,6 +64,77 @@
                         <button class="boton botonAzul" id="btnEnviarNotion">
                             Enviar Notion
                         </button>
+                        <label for="lenguaje_codigo">Lenguaje Notion:</label>
+                        <select name="lenguaje_codigo" id="lenguaje_codigo" class="select-lenguaje">
+                            <option value="abap">ABAP</option> 
+                            <option value="arduino">Arduino</option> 
+                            <option value="bash">Bash</option> 
+                            <option value="basic">BASIC</option> 
+                            <option value="c">C</option> 
+                            <option value="clojure">Clojure</option> 
+                            <option value="coffeescript">CoffeeScript</option> 
+                            <option value="c++">C++</option> 
+                            <option value="c#">C#</option> 
+                            <option value="css">CSS</option> 
+                            <option value="dart">Dart</option> 
+                            <option value="diff">Diff</option> 
+                            <option value="docker">Docker</option> 
+                            <option value="elixir">Elixir</option> 
+                            <option value="elm">Elm</option> 
+                            <option value="erlang">Erlang</option> 
+                            <option value="flow">Flow</option> 
+                            <option value="fortran">Fortran</option> 
+                            <option value="f#">F#</option> 
+                            <option value="gherkin">Gherkin</option> 
+                            <option value="glsl">GLSL</option> 
+                            <option value="go">Go</option> 
+                            <option value="graphql">GraphQL</option> 
+                            <option value="groovy">Groovy</option> 
+                            <option value="haskell">Haskell</option> 
+                            <option value="html">HTML</option> 
+                            <option value="java">Java</option> 
+                            <option value="javascript">JavaScript</option> 
+                            <option value="json">JSON</option> 
+                            <option value="kotlin">Kotlin</option> 
+                            <option value="latex">LaTeX</option> 
+                            <option value="less">Less</option> 
+                            <option value="lisp">Lisp</option> 
+                            <option value="livescript">LiveScript</option> 
+                            <option value="lua">Lua</option> 
+                            <option value="makefile">Makefile</option> 
+                            <option value="markdown">Markdown</option> 
+                            <option value="markup">Markup</option> 
+                            <option value="matlab">MATLAB</option> 
+                            <option value="nix">Nix</option> 
+                            <option value="objective-c">Objective-C</option> 
+                            <option value="ocaml">OCaml</option> 
+                            <option value="pascal">Pascal</option> 
+                            <option value="perl">Perl</option> 
+                            <option value="php">PHP</option> 
+                            <option value="plain text">Plain Text</option> 
+                            <option value="powershell">PowerShell</option> 
+                            <option value="prolog">Prolog</option> 
+                            <option value="python">Python</option> 
+                            <option value="r">R</option> 
+                            <option value="reason">Reason</option> 
+                            <option value="ruby">Ruby</option> 
+                            <option value="rust">Rust</option> 
+                            <option value="sass">Sass</option> 
+                            <option value="scala">Scala</option> 
+                            <option value="scheme">Scheme</option> 
+                            <option value="scss">Scss</option> 
+                            <option value="shell">Shell</option> 
+                            <option value="sql">SQL</option> 
+                            <option value="swift">Swift</option> 
+                            <option value="typescript">TypeScript</option> 
+                            <option value="vb.net">VB.Net</option> 
+                            <option value="verilog">Verilog</option> 
+                            <option value="vhdl">VHDL</option> 
+                            <option value="visual basic">Visual Basic</option> 
+                            <option value="webassembly">WebAssembly</option> 
+                            <option value="xml">XML</option> 
+                            <option value="yaml">YAML</option>
+                        </select>
                     </li>
 
                     <li class="appMain_mitadBottom out">
