@@ -105,7 +105,7 @@ async function enviarNotion()
 
     console.log("enviando al server");
     
-    const codigo = document.getElementById("resultado").value;
+    const codigo = document.getElementById("resultado").innerText;
 
     const data = { 
         "codigo": codigo,
@@ -113,20 +113,26 @@ async function enviarNotion()
         "idPage": urlNotion 
     };
 
-    fetch("https://codesnipper.vercel.app/api", {
+    console.log(JSON.stringify(data));
+
+    fetch("https://codesnippletback.herokuapp.com/api", {
+        mode: "no-cors",
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
     })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Success:", data);
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-        });
+    .then(respuesta => {
+        if (typeof respuesta !== 'undefined') {
+            console.log("Success:", JSON.parse(respuesta));
+        }
+        console.log("Success:", respuesta);
+
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    });
 
 }
 
