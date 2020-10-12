@@ -123,6 +123,10 @@ async function enviarNotion()
         },
         body: JSON.stringify(data)
     })
+    .then(response => {
+        console.log("resuestas=", response.body);
+        console.log("resuestas=", response.body);
+    })
     .then(respuesta => {
         if (typeof respuesta !== 'undefined') {
             console.log("Success:", JSON.parse(respuesta));
