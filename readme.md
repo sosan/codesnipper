@@ -11,11 +11,10 @@ https://sosan.github.io/codesnipper/
 
 PUBLICAR DATOS EN NOTION
 ========================
-* **Si la pagina de notion es privada**, necesitaras el token de notion. Mas abajo explicamos como obtener el token.
-* **Si la pagina de notion es publica**, no necesitaras el token de notion.
-<img src="./img/sharenotion.png">
+Para publicar en notion desde la web necesitaras token de notion.so
 
 
 COMO CONSEGUIR TOKEN NOTION
 =============================
+Abres la web de notion. Boton derecho sobre la web, inspeccionar, pestaña applicacion (si no aparecere estara dentro de >> ) -> Cookies -> notion.so. click sobre token_v2. copiar valor de la zona inferior.
 <img src="./img/token_notion.png"><br>
