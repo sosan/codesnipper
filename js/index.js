@@ -173,8 +173,8 @@ async function enviarNotion()
 
     console.log(JSON.stringify(data));
 
-    fetch("http://localhost:5000/api", {
-    // fetch("https://codesnippletback.herokuapp.com/api", {
+    // fetch("http://localhost:5000/api", {
+    fetch("https://codesnippletback.herokuapp.com/api", {
         mode: "no-cors",
         method: "POST",
         headers: {
